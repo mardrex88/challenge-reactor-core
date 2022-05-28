@@ -54,8 +54,8 @@ public class CSVUtilTest {
                 })
                 .buffer(100)
                 .flatMap(playerA -> listFlux
-                         .filter(playerB -> playerA.stream()
-                                 .anyMatch(a ->  a.club.equals(playerB.club)))
+                        .filter(playerB -> playerA.stream()
+                                .anyMatch(a ->  a.club.equals(playerB.club)))
                 )
                 .distinct()
                 .collectMultimap(Player::getClub);
